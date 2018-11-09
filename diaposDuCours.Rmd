@@ -1,0 +1,86 @@
+---
+title: "Bioinformatique"
+subtitle: "Master 2 Biologie intégrative et changements globaux (BICG)"
+author: "Aurélien Chateigner"
+date: "9 novembre 2018<br> ![ccby](images/CC-BY-SA.png)"
+output:
+  ioslides_presentation:
+    css: styles.css
+    incremental: yes
+    logo: images//BioForA_logo.png
+    widescreen: yes
+---
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('slides').prepend("<div class=\"zoomDiv\"><img src=\"\" class=\"zoomImg\"></div>");
+    // onClick function for all plots (img's)
+    $('img:not(.zoomImg)').click(function() {
+      $('.zoomImg').attr('src', $(this).attr('src'));
+      $('.zoomDiv').css({opacity: '1', width: '90%'});
+    });
+    // onClick function for zoomImg
+    $('img.zoomImg').click(function() {
+      $('.zoomDiv').css({opacity: '0', width: '0%'});
+    });0
+  });
+</script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Bioinformatique
+
+## Plan général du cours
+
+Contenu:
+
+1) Bases de bioinformatique et quelques applications sur l’étude des séquences nucléotidiques
+<br>8h S. Maury
+2) Bases en informatique et applications bioinformatiques pour la génomique
+<br>4h O. Rogier et 4h A. Chateigner
+
+## Plan de la partie 2
+
+* TD 5 : bases informatiques et programmation
+    * Structure d'un ordinateur, fonction des composants
+    * Les langages de programmation : bash (awk, sed), python/perl, R - (C/C++)
+* TD 6 : Du fasta au bam
+    * Notions de pipeline, scripts, outils de bio-info pure (samtools)
+    * Visualisation (gbrowse, IGV) et calling, détection de polymorphisme
+* TD 7 : R des bases à l'analyse transcriptomique
+    * R : bases, rapports, reprise des scripts bash à intégrer
+    * R : RNAseq, analyses de données d'expression
+* TD 8 : Ontologie, prédictions et évaluation
+    * R : ontologies, prédictions et retour à la bio
+    * Finish du script, réflexion sur la suite
+    
+# Go go go!
+
+# R
+
+## R, kessessé ?
+
+* Langage de programmation
+* Environnement mathématique
+
+Pour faire quoi ?
+
+* Traitement de données
+* Analyse statistique
+* Graphiques
+
+## Les spécificités de R
+
+* Environnement intégré
+* Langage de programmation complet et autonome
+* Interprété (pas compilé comme C)
+* Puissant en mathématiques et statistiques
+
+De plus
+
+* Langage *vectorisé* <-- Super super super important
+
+## Ouvrons R

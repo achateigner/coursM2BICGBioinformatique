@@ -1,0 +1,13 @@
+---
+title: " "
+author: " "
+date: " "
+output:
+  ioslides_presentation:
+    widescreen: false
+    logo: images/BioForA_logo.png
+---
+
+# Caption1
+
+## Caption 2
