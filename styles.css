@@ -50,7 +50,7 @@ html, li {
   width: 100%;
 }
 
-.topcorner {
+.topright {
     position: absolute;
     top: 0;
     right: 0;
@@ -66,7 +66,6 @@ html, li {
     bottom: 0;
     left: 0;
     right: 0;
-
     margin: auto;
 }
 /*slides > slide.not(.nobackground):before {
@@ -103,4 +102,15 @@ aside.gdbar img {
     width: 115px;
     height: 93px;
     top: -7px;
+}
+
+.fullScreenPic {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
 }

@@ -27,10 +27,6 @@ output:
   });
 </script>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
 # Bioinformatique
 
 ## Plan général du cours
@@ -66,11 +62,10 @@ Contenu:
 * Langage de programmation
 * Environnement mathématique
 
-Pour faire quoi ?
-
-* Traitement de données
-* Analyse statistique
-* Graphiques
+* Pour faire quoi ?
+    * Traitement de données
+    * Analyse statistique
+    * Graphiques
 
 ## Les spécificités de R
 
@@ -78,9 +73,111 @@ Pour faire quoi ?
 * Langage de programmation complet et autonome
 * Interprété (pas compilé comme C)
 * Puissant en mathématiques et statistiques
+* Multiplateforme
+* Libre et ouvert
 
-De plus
-
-* Langage *vectorisé* <-- Super super super important
+* De plus
+    * Langage **vectorisé** <-- Super super super important
 
 ## Ouvrons R
+
+* Ouvrez un terminal
+* Tapez R <div class="topright"><img src="images//RdansCmd.PNG"></div>
+* C'est pas folichon, mais ça fait quoi ?
+
+## Premières commandes
+
+```{r erreurs hello world, error=TRUE}
+Hello world!
+```
+
+```{r premières choses authorisees, results='hold'}
+print("Hello world!")
+2 + 3; 2 - 3; 2 * 3; 2 / 3; 2 ** 3; 2 ^ 3
+```
+
+## Objets et assignations
+
+```{r premiers objets, results='hold'}
+a <- 2
+b <- 3
+a + b; a - b; a * b; a / b; a ** b; a ^ b
+```
+
+## Objets et assignations
+
+On peut réutiliser un objet:
+```{r}
+a <- 1
+a
+a <- 2
+a
+```
+
+# Les scripts
+
+## Sauvegarder l'avancée de son travail : le script
+
+* Programmation: A quoi ça sert ? <div><img class="topright" style="width: 60%" src="images//geeks-and-repetitive-tasks-02.png"></div>
+* Gain de temps
+* Répétition de tâches
+* Tracabilité
+
+## Sauvegarder son travail en mieux : le rapport ! {.build}
+
+* Traçabilité des actions (pas de clic clic)
+* Regrouper code et résultats
+* Faire un rapport quoi...
+* Ouvrons RStudio
+
+<div><img class="fullScreenPic" src="images//RstudioInterface.png"></div>
+<div class="notes">
+Décrire la fenêtre
+Parler en dernier de la fenêtre de script
+</div>
+
+## Rmarkdown
+
+* `R` + `markdown` (langage à balisage léger)
+* Code `R` et commentaires
+
+* Faisons tout de suite un rapport qui a :
+    * Des titres structurés et numérotés
+    * Une table des matières
+    * Des chunks avec des noms
+    * Du code
+    * Qu'il produise un rapport html
+    * Que sa date soit automatique
+        * date: "`` `r
+        substr(Sys.time(), 1, 10)` ``"
+
+
+
+## Sauver des objets et une session
+
+* Quand on veut sauvegarder son travail on peut sauver une image de session :
+```{r save image}
+save.image(file = "nomDeLObjetSession.rda")
+```
+
+* On peut aussi sauver les objets directement
+```{r save file}
+save(a, file = "nomDeLObjet.rda")
+```
+
+* Ou encore sauver un fichier texte, un tableau
+```{r write txt and table}
+write(a, file = "fichierTexte.txt")
+matrice <- matrix(1:4, ncol = 2)
+write.table(matrice, file = "matrix.csv")
+```
+
+
+
+
+
+
+
+
+
+
