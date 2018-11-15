@@ -56,6 +56,11 @@ html, li {
     right: 0;
 }
 
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .verticallyCenter {
 /*    width: 300px;
     height: 300px;
