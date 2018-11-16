@@ -297,13 +297,24 @@ Vous pouvez aussi les installer et charger en clic clic mais :
 ```{r anyLib, eval=FALSE}
 install.packages("anyLib")
 library(anyLib)
-packagesNeeded <- list("captioner", "apercu", "viridis")
+packagesNeeded <- c("captioner", "apercu", "viridis")
 anyLib(packagesNeeded)
 ```
 
 - Permet d'installer/de charger plusieurs packages à la fois
 - Permet de les installer du CRAN, de bioconductor ou de github en 1 fois
 - Renvoie un vecteur de booléen nommé de réussite ou d'échec
+
+## Evaluation 1
+
+1. Installez les packages `apercu` du CRAN, `limma` sur Bioconductor et
+`achateigner/loadAllChunksCache` de github, efficacement
+1. Chargez ces packages
+1. Donnez le nom de l'auteur/créateur de chacun de ces packages (utilisez
+`packageDescription` ou `citation`)
+1. Quelles sont les versions installées de ces packages ? Où/comment avez-vous
+trouvé cette information ? (vous devriez pouvoir trouver la fonction nécessaire
+en réfléchissant un peu)
 
 # Import/Export
 
@@ -348,6 +359,11 @@ matrice <- read.table(file = "matrix.csv")
 matrice2 <- read.csv(file = "matrix2.csv", row.names = 1)
 ```
 
+## Evaluation 2
+
+1. Sauvegardez l'objet contenant les trois packages à installer de l'évaluation 1 dans votre dossier courrant
+1. Fermez votre Rstudio puis rouvrez-le et chargez ce même objet
+
 # Les bases de la syntaxe
 
 ## Les commandes R
@@ -386,7 +402,7 @@ b
 
 - -> = ;
 - Regroupement de commandes avec {} :
-```{r}
+```{r regroupement de commandes}
 {
     a <- 2 + 3
     b <- a
@@ -412,14 +428,14 @@ b
 
 ## TRUE or FALSE {.build}
 
-- T veut dire TRUE
-- F veut dire FALSE
-- Mais préférez TRUE et FALSE car
+- `T` veut dire `TRUE`
+- `F` veut dire `FALSE`
+- `TRUE` vaut 1 et `FALSE` vaut 0 si on les somme (`sum()`)
+- Mais préférez `TRUE` et `FALSE` car
 ```{r true or false, error=TRUE, cache=FALSE}
 TRUE <- 3
 T <- 3
 ```
-
 
 # Les objets
 
@@ -497,6 +513,7 @@ is.null(NULL)
 - `na.rm`
 ```{r na ope}
 NA == NA
+NA != NA
 is.na(NA)
 ```
 
@@ -589,9 +606,18 @@ class(x)
 - Matrice avec colonnes de modes différents
 - `data.frame()` et `as.data.frame()`
 - `rbind()` et `cbind()`
-```{r}
+```{r data frames}
 d <- data.frame(num = 1:3, letter = letters[1:3])
 ```
+
+## Evaluation 3
+
+1. Affectez à un vecteur la sortie du chargement des packages demandés à
+l'évaluation 1
+1. Affectez à un autre vecteur le nom des auteurs de chaque package, dans l'ordre
+1. Affectez à un autre vecteur la version de chaque package, dans l'ordre, et sans les taper à la main (sauf si vous n'avez pas le choix)
+1. Sauvez votre session
+1. Construisez une data frame contenant les vecteurs des points 1 à 3
 
 # Indiçage
 
@@ -662,22 +688,18 @@ d[2][[1]][1]
 ```
 
 
-# Le problème
+## Evaluation 4
 
-## Okay {.build .smaller}
-
-- Une ligue de hockey compte huit équipes.
-- Le classement de la ligue est disponible quotidiennement dans le journal
-- Afin d’effectuer différentes analyses statistiques, on désire intégrer ces données dans un espace de travail R.
-- On doit donc déterminer le type d’objet R approprié pour stocker le classement de la ligue.
-- Ensuite, on souhaite extraire les valeurs suivantes de l’objet précédemment créé :
-    1. Le nombre d’équipes de la ligue.
-    1. La fiche complète de l’équipe de Montréal.
-    1. La fiche complète de l’équipe à la septième position du classement.
-
-<img class="centered" src="images/classementProbleme.png">
-
-# Machine learning
+A partir de votre data frame précédente, extrayez les informations suivantes :
+1. L'auteur du package `apercu`
+1. La version du package `limma`
+1. Le nombre de packages correctement chargés
+1. Le nombre de packages écrits par Aurelien Chateigner
+1. Le nombre de packages écrits par quelqu'un d'autre
+1. La classe de la colonne chargement
+1. La classe de la colonne auteurs
+1. La première classe de la colonne versions
+1. Les détails du package `limma`
 
 # Les graphiques
 
